@@ -26,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: './sub/pnpm-lock.json'
+        cache-dependency-path: '**/pnpm-lock.json'
     # - run: npm -g add pnpm
     # - run: npm install
     - run: npm ci
