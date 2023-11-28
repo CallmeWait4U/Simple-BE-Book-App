@@ -25,6 +25,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
-    - run: npm ci
+    - run: pnpm install --frozen-lockfile
     - run: pnpm build --if-present
     - run: pnpm test
