@@ -7,7 +7,7 @@ on:
   push:
     branches: [ "thinh" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "thinh" ]
 
 jobs:
   build:
