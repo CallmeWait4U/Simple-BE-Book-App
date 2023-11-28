@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { CreateBookDTO } from './dto/create.book.dto';
 import { DeleteBookDTO } from './dto/delete.book.dto';
+import { DetailBookDTO } from './dto/detail.book.dto';
 import { SearchBookDTO } from './dto/search.book.dto';
 import { UpdateBookDTO } from './dto/update.book.dto';
 import { Book } from './interfaces/book.interface';
@@ -29,5 +30,9 @@ export class BookService {
 
   async findAll(): Promise<Book[]> {
     return this.bookModel.find().exec();
+  }
+
+  async findDetail(detailBookDto: DetailBookDTO): Promise<Book> {
+    return this.bookModel.findById(detailBookDto.id).exec();
   }
 }
