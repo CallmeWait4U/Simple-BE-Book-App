@@ -2,7 +2,6 @@ import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { BookService } from './book.service';
 import { CreateBookDTO } from './dto/create.book.dto';
 import { DeleteBookDTO } from './dto/delete.book.dto';
-import { DetailBookDTO } from './dto/detail.book.dto';
 import { SearchBookDTO } from './dto/search.book.dto';
 import { UpdateBookDTO } from './dto/update.book.dto';
 import { Book } from './interfaces/book.interface';
@@ -36,8 +35,8 @@ export class BookController {
     return this.bookService.findAll();
   }
 
-  @Get('detail')
-  async findDetail(@Query() q: DetailBookDTO): Promise<Book> {
-    return this.bookService.findDetail(q);
-  }
+  // @Get('detail')
+  // async findDetail(@Query() q: DetailBookDTO): Promise<Book> {
+  //   return this.bookService.findDetail(q);
+  // }
 }
